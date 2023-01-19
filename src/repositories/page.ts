@@ -16,11 +16,8 @@ export class Page {
     return this._pageNumber;
   }
 
-  /**
-   * @return {number|null}
-   */
-  get limit() {
-    return this._limit;
+  get limit(): number | undefined {
+    return this._limit ?? undefined;
   }
 
   get offset(): number {

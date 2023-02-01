@@ -19,11 +19,11 @@ export function getNANOID(): string {
 }
 
 export function getNumberNANOID(): string {
-  return secretKeyNanoid();
+  return numberNanoid();
 }
 
 export function getSecretKeyNANOID(): string {
-  return numberNanoid();
+  return secretKeyNanoid();
 }
 
 export function getUUID(): string {

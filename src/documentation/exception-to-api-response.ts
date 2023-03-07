@@ -7,11 +7,13 @@ export class ExceptionToApiResponse {
     description: string,
     type: ExceptionType = ExceptionType.ERROR,
     message: string | null,
-  ) {
+  ): object {
     let status = 500;
+
     if (type === ExceptionType.UNAUTHORIZED) {
       status = 401;
     }
+
     return {
       status,
       description,

@@ -1,7 +1,7 @@
-import { ExceptionType } from '../enums/exceptions/exception-type';
 import { ExceptionCodeBase } from '../enums/exceptions/exception-code-base';
-import { ExceptionCodeInterface } from './interfaces/exception-code-interface';
+import { ExceptionType } from '../enums/exceptions/exception-type';
 import { CodeException } from './code.exception';
+import { ExceptionCodeInterface } from './interfaces/exception-code-interface';
 
 export class DomainException extends Error {
   public type: ExceptionType = ExceptionType.ERROR;
@@ -9,7 +9,10 @@ export class DomainException extends Error {
     ExceptionCodeBase.GENERIC_ERROR,
   );
 
-  constructor(private _message: string, private _code: ExceptionCodeInterface) {
+  constructor(
+    private readonly _message: string,
+    private readonly _code: ExceptionCodeInterface,
+  ) {
     super(_message);
   }
 

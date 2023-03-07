@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsString } from 'class-validator';
+
 import { Operator } from '../enums/repository/operator';
 
 export class Filter {

@@ -1,12 +1,16 @@
 import { InvariantViolationException } from '../exceptions/invariant-violation.exception';
 
 export class Page {
-  constructor(private _pageNumber: number = 1, private _limit: number | null) {
+  constructor(
+    private readonly _pageNumber: number = 1,
+    private readonly _limit: number | null,
+  ) {
     if (_pageNumber < 1) {
       throw new InvariantViolationException(
         'Page number should be greater than 0',
       );
     }
+
     if (_limit !== null && _limit < 1) {
       throw new InvariantViolationException('Limit should be greater than 0');
     }

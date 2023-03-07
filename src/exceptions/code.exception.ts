@@ -1,5 +1,5 @@
-import { ExceptionCodeInterface } from './interfaces/exception-code-interface';
 import { ExceptionCodeBase } from '../enums/exceptions/exception-code-base';
+import { ExceptionCodeInterface } from './interfaces/exception-code-interface';
 
 /**
  *

@@ -6,6 +6,7 @@ export function ApiFileResponse(
 ): MethodDecorator & ClassDecorator {
   return applyDecorators(
     ApiOkResponse({
+      description: 'File download successful',
       schema: {
         type: 'string',
         format: 'binary',

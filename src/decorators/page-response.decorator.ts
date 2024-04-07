@@ -7,9 +7,13 @@ import {
 } from '@nestjs/swagger';
 
 class PageResponse<T> {
+  @ApiProperty({ description: 'Array of items in the page' })
   rows!: T[];
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Total count of items',
+    example: 10,
+  })
   count!: number;
 }
 

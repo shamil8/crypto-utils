@@ -7,10 +7,7 @@ export function ApiFileResponse(
   return applyDecorators(
     ApiOkResponse({
       description: 'File download successful',
-      schema: {
-        type: 'string',
-        format: 'binary',
-      },
+      schema: { type: 'string', format: 'binary' },
     }),
     ApiProduces(...mimeTypes),
   );

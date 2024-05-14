@@ -19,21 +19,18 @@ class PageResponse<T> {
 
 export type PageResType<T> = Promise<PageResponse<T>>;
 
-export const ApiResponsePaginated = <DataDto extends Type<unknown>>(
-  dataDto: DataDto,
+export const ApiResponsePaginated = <ResourceDto extends Type<unknown>>(
+  resource: ResourceDto,
 ): MethodDecorator & ClassDecorator =>
   applyDecorators(
-    ApiExtraModels(PageResponse, dataDto),
+    ApiExtraModels(PageResponse, resource),
     ApiOkResponse({
       schema: {
         allOf: [
           { $ref: getSchemaPath(PageResponse) },
           {
             properties: {
-              rows: {
-                type: 'array',
-                items: { $ref: getSchemaPath(dataDto) },
-              },
+              rows: { type: 'array', items: { $ref: getSchemaPath(resource) } },
             },
           },
         ],

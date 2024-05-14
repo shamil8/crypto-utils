@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
-import { Direction } from '../enums/repository/direction';
+import { Direction } from '../../enums/repository/direction';
 
-export class Order {
+export class OrderCommand {
   @ApiProperty({
     required: true,
     description: 'The field to order by',

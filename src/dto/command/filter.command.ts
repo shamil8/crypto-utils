@@ -1,9 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
-import { Operator } from '../enums/repository/operator';
+import { Operator } from '../../enums/repository/operator';
 
-export class Filter {
+export class FilterCommand {
   @ApiProperty({
     required: true,
     example: 'marketId',

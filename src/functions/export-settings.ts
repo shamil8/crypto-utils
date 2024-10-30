@@ -1,6 +1,5 @@
 import bigNumber from 'bignumber.js';
 import { customAlphabet } from 'nanoid';
-import { v4 as uuidv4 } from 'uuid';
 
 /** Default settings for BigNumber */
 bigNumber.config({ EXPONENTIAL_AT: 60 });
@@ -29,10 +28,6 @@ export function getNumberNANOID(): string {
 
 export function getSecretKeyNANOID(): string {
   return secretKeyNanoid();
-}
-
-export function getUUID(): string {
-  return uuidv4();
 }
 
 export const BigNumber = bigNumber;
